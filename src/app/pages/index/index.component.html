@@ -1,3 +1,30 @@
 <app-navbar></app-navbar>
 
-<p>index works!</p>
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>No. Control</th>
+        <th>Nombre</th>
+        <th>Carrera</th>
+        <th>Semestre</th>
+        <th>Especialidad</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let alumno of alumnos; let i = index">
+        <td>{{ alumno.control }}</td>
+        <td>{{ alumno.nombre }}</td>
+        <td>{{ alumno.carrera }}</td>
+        <td>{{ alumno.semestre }}</td>
+        <td>{{ alumno.especialidad }}</td>
+        <td>
+          <button class="edit" (click)="editar(i)">✏</button>
+          <button class="delete" (click)="eliminar(i)">🗑</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-footer></app-footer>
